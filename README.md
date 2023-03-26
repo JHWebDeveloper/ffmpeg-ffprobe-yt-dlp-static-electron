@@ -36,9 +36,9 @@ console.log(fixPathForAsarUnpack(ytdlp.path))
 // electron-builder.yml
 
 files:
-  -"node_modules/ffmpeg-static/bin/${os}${/*}"
-  -"node_modules/ffmpeg-static/index.js"
-  -"node_modules/ffmpeg-static/package.json"
+  -"node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/bin/${os}${/*}"
+  -"node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/index.js"
+  -"node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/package.json"
 
 win:
   files:
@@ -48,4 +48,25 @@ mac:
   files:
     - "!node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/bin/win${/*}"
 
+```
+
+I highly recommend that you add these scripts to your package.json. These will update yt-dlp to the latest version. I'll try to release updates to this package as new versions of yt-dlp come out, but these will let you get the latest a little sooner.
+
+```
+// package.json
+
+{
+  ...,
+  "scripts":{
+    ...,
+    "update-yt-dlp:mac": "node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/bin/mac/yt-dlp -U",
+		"update-yt-dlp:win": "cd node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/bin/win && yt-dlp.exe -U",
+  }
+}
+```
+
+For Mac users, if you're getting permission errors when running or updating yt-dlp, this command works for me:
+
+```
+sudo chmod a+x /node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/bin/mac/yt-dlp
 ```
