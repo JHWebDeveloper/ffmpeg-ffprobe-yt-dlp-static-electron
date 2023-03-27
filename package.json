@@ -3,11 +3,16 @@
   "version": "1.0.3",
   "description": "Static binaries of ffmpeg, ffprobe and yt-dlp for Mac and Windows",
   "main": "index.js",
+  "types": "index.d.ts",
   "keywords": [
     "ffmpeg",
     "ffprobe",
     "yt-dlp",
-    "youtube-dl"
+    "youtube-dl",
+    "electron",
+    "static",
+    "binary",
+    "binaries"
   ],
   "author": "jhwebdeveloper",
   "license": "MIT",
