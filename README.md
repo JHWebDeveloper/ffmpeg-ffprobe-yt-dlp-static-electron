@@ -68,5 +68,5 @@ I highly recommend that you add these scripts to your package.json. These will u
 For Mac users, if you're getting permission errors when running or updating yt-dlp, this command works for me:
 
 ```
-sudo chmod a+x /node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/bin/mac/yt-dlp
+sudo chmod a+x ./node_modules/ffmpeg-ffprobe-yt-dlp-static-electron/bin/mac/yt-dlp
 ```
